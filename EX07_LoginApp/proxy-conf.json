@@ -1,0 +1,7 @@
+{
+    "/identitytoolkit/*":{
+        "target": "https://www.googleapis.com/",
+        "secure": false,
+        "chageOrigin": true
+    }
+}
