@@ -53,7 +53,7 @@ export class AuthService {
       ).pipe(
         map( resp => {
           console.log('inside map rxjs');
-// tslint:disable-next-line: no-string-literal
+          // tslint:disable-next-line: no-string-literal
           this.saveToken( resp['idToken']);
           return resp;
         })
@@ -72,5 +72,9 @@ export class AuthService {
       this.userToken = '';
     }
     return this.userToken;
+  }
+
+  isAuth(): boolean{
+    return this.userToken.length > 2;
   }
 }
