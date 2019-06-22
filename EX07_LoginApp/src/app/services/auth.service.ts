@@ -21,10 +21,12 @@ export class AuthService {
 
   userToken: string;
 
-  constructor( private http: HttpClient) { }
-
-  logout(user: UsuarioModel) {
+  constructor( private http: HttpClient) {
     this.reedToken();
+   }
+
+  logout() {
+    localStorage.removeItem('token');
   }
 
   login( user: UsuarioModel) {
