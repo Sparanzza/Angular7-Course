@@ -23,11 +23,11 @@ export class AuthService {
 
   constructor( private http: HttpClient) { }
 
-  logout(user: UsuarioModel){
+  logout(user: UsuarioModel) {
     this.reedToken();
   }
 
-  login( user: UsuarioModel){
+  login( user: UsuarioModel) {
 
     const authData = {
       ...user,
@@ -40,8 +40,8 @@ export class AuthService {
       );
 
   }
-  
-  NewUser(user: UsuarioModel){
+
+  NewUser(user: UsuarioModel) {
     const authData = {
       ...user,
       returnSecureToken: true
@@ -51,23 +51,24 @@ export class AuthService {
       `${this.url}/signupNewUser?key=${this.apikey}` ,
       authData
       ).pipe(
-        map( resp=>{
+        map( resp => {
           console.log('inside map rxjs');
+// tslint:disable-next-line: no-string-literal
           this.saveToken( resp['idToken']);
           return resp;
         })
       );
   }
 
-  private saveToken (idToken: string){
+  private saveToken(idToken: string) {
     this.userToken = idToken;
     localStorage.setItem('token', idToken);
   }
 
-  private reedToken(){
-    if(localStorage.getItem('token')){
+  private reedToken() {
+    if (localStorage.getItem('token')) {
       this.userToken = localStorage.getItem('token');
-    }else{
+    } else {
       this.userToken = '';
     }
     return this.userToken;
