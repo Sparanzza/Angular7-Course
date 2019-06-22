@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AuthService {
 
-  private url = 'ttps://www.googleapis.com/identitytoolkit/v3/relyingparty';
+  private url = 'https://www.googleapis.com/identitytoolkit/v3/relyingparty';
   // private url = '/identitytoolkit/v3/relyingparty';
   private apikey = 'AIzaSyAF4sQnbjYoW16CB05rQ-hnc8hmaiRGX9w';
   // sign up new users
