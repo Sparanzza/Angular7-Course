@@ -1,0 +1,28 @@
+apikey: 'AIzaSyDlvWAKVpayJLu9kQWx8qvwmGxhZlRUChk'
+
+Channel - list
+
+{
+ "kind": "youtube#channelListResponse",
+ "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/ihwvcL-I55_ZgIWOmhU32kaknrQ\"",
+ "pageInfo": {
+  "totalResults": 1,
+  "resultsPerPage": 1
+ },
+ "items": [
+  {
+   "kind": "youtube#channel",
+   "etag": "\"XpPGQXPnxQJhLgs6enD_n8JR4Qk/xzPqHVp6EvwGUvYhNo-RTBXoTdI\"",
+   "id": "UCKHsXi0fY-mvLAAnLq95PPQ",
+   "contentDetails": {
+    "relatedPlaylists": {
+     "uploads": "UUKHsXi0fY-mvLAAnLq95PPQ",
+     "watchHistory": "HL",
+     "watchLater": "WL"
+    }
+   }
+  }
+ ]
+}
+
+PlaylistItem - List

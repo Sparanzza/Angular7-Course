@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="col-md-4">
+    <h3>Select yout files</h3>
+    <div appNgDropFiles [files]= "files"
+    (mouseOver)="isOverDrop = $event"  [ngClass]="{'file-over': isOverDrop}"  class="well drop-zone">
+      <h4>drag and drop your files</h4>
+      <img src="assets/drop-images.png" alt="">
+    </div>
+  </div>
+  <div class="col-md-8">
+    <h4>load files</h4>
+    <button [disabled]="files.length===0" (click)="loadImage()" class="btn btn-success m-1">load from firebase</button>
+    <button (click)="clean( )" class="btn btn-danger m-1">Clean</button>
+  
+
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th>file name</th>
+          <th>size</th>
+          <th>progress</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let file of files" >
+          <td [ngClass]="{'text-green': file.progress >= 100 }" 
+          >{{file.name}}</td>
+          <td>{{file.file.size /1024 / 1024 | number:'.2-2'}}</td>
+          <td>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" [ngStyle]="{'width' : file.progress + '%'}" style="width: 75%"></div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>

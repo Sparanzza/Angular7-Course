@@ -1,0 +1,27 @@
+<h1>
+  virtual works!
+</h1>
+<hr>
+
+<div class="row">
+  <div class="col">
+    <button
+    (click) = "goToEnd()"
+    class="btn btn-primary m-1">Go to End</button>
+  </div>
+  <div class="col text-right">
+      <button
+      (click) = "goToStart()"
+      class="btn btn-danger m-1">Go To Start</button>
+  </div>
+</div>
+
+<cdk-virtual-scroll-viewport
+class="list-container list-group" itemSize="20">
+
+  <div class = "list-group-item"
+  *cdkVirtualFor="let person of persons;let i = index; let count = count">
+    Item {{ i }} / {{ count }}
+  </div>
+
+</cdk-virtual-scroll-viewport>

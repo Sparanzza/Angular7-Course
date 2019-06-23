@@ -1,0 +1,47 @@
+<h1>Videos from Youtube</h1>
+<hr>
+<br>
+<div class="card-columns" *ngIf="videos" >
+    <div class="card" *ngFor="let video of videos" >
+      <img [src]="video.thumbnails.high.url" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{video.title}}</h5>
+        <p class="card-text">{{video.description | slice:0:250}}(...)</p>
+        <button 
+        (click) = "playVideo(video)"
+        class="btn btn-outline-primary btn-block">Play Video</button>
+      </div>
+    </div>
+
+  </div>
+  <button (click) = "loadMoreVideos()"
+  class = "btn btn-primary btn-block">more videos</button>
+
+
+<!-- Modal -->
+<div class="modal fade" 
+id="exampleModalCenter" 
+tabindex="-1" role="dialog" 
+aria-labelledby="exampleModalCenterTitle" aria-hidden="true"
+data-backdrop = "static"
+data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content" *ngIf="videoSel" >
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">{{videoSel.title}}</h5>
+        </div>
+        <div class="modal-body">
+          <iframe width="100%" height="315" 
+          [src] = "videoSel.resourceId.videoId|videoYoutube" 
+          frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen></iframe>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger"
+          (click) ="closeModal()"
+          >Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
