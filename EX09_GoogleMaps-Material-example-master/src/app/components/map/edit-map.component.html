@@ -1,0 +1,18 @@
+<form [formGroup] = "form">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Fitle" formControlName="title">
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <textarea rows="3" matInput placeholder="Description" formControlName="desc"></textarea>
+    </mat-form-field>
+
+    <div>
+        <button
+        (click) = "saveChanges()"
+        mat-raised-button color = "primary">Ok</button>
+        <button
+        (click) = "onNoClick()" type="button"
+        mat-raised-button color = "warn">Cancel</button>
+    </div>
+  </form>
