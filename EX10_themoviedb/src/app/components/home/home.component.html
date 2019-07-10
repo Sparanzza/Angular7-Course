@@ -1,0 +1,17 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Films App Example</h1>
+    <p class="lead">This is a example app to show the best films from the movie db.</p>
+  </div>
+</div>
+
+<div class="container">
+
+  <app-galeria titulo="Peliculas en cartelera" [peliculas]="cartelera"></app-galeria>
+  <br>
+  <app-galeria titulo="Peliculas populares" [peliculas]="populares"></app-galeria>
+  <br>
+  <app-galeria titulo="Peliculas Pequeños" [peliculas]="popularesNinos"></app-galeria>
+
+
+</div>
